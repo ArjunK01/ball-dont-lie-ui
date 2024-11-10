@@ -48,7 +48,7 @@ const useCursor = ({ url, filterParams, fetcher }: UseCursorProps) => {
     for (const [key, value] of Object.entries(
       lastFetchedFilterParams.current ?? {}
     )) {
-      if (filterParams[key] !== value) {
+      if (JSON.stringify(filterParams[key]) !== JSON.stringify(value)) {
         resetCursor = true;
         break;
       }
