@@ -52,6 +52,7 @@ const TableWithPagination = <T extends {}>({
         flex: 1,
         display: "flex",
         flexDirection: "column",
+        minHeight: 300,
       }}
     >
       <Box

@@ -48,7 +48,7 @@ const Filtering = ({
         flexWrap="wrap"
         alignItems="baseline"
       >
-        <Stack direction="row" gap={3}>
+        <Stack direction="row" gap={3} flexWrap="wrap">
           <Stack direction="row" gap={1} alignItems="center">
             <FormControl sx={{ width: 200 }}>
               <InputLabel id="teams-select-label">Teams</InputLabel>
@@ -87,7 +87,7 @@ const Filtering = ({
             )}
           </Stack>
 
-          <Stack direction="row" gap={1} alignItems="center">
+          <Stack direction="row" gap={1} alignItems="center" flexWrap="wrap">
             <TextField
               type="number"
               variant="standard"

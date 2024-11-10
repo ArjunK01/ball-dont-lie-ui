@@ -8,7 +8,7 @@ const Landing = () => {
         alignItems="center"
         spacing={2}
       >
-        <Typography variant="h4">Welcome to BallDontLie UI</Typography>
+        <Typography variant="h5">Welcome to BallDontLie UI</Typography>
         <NavigationLink to="/players">
           <Button variant="contained" sx={{ width: "fit-content" }}>
             Get Started
