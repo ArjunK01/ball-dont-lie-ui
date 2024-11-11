@@ -18,6 +18,15 @@ const useQueryStateParam = <T,>({
 
     try {
       let value = JSON.parse(param) as T;
+      let isArray = Array.isArray(value);
+      let defaultValueIsArray = Array.isArray(defaultValue);
+
+      if (isArray && !defaultValueIsArray) {
+        return defaultValue;
+      } else if (!isArray && defaultValueIsArray) {
+        return defaultValue;
+      }
+
       if (typeof value !== typeof defaultValue) {
         return defaultValue;
       }
