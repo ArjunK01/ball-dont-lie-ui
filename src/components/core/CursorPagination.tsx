@@ -10,6 +10,8 @@ interface PaginationProps {
   loading: boolean;
 }
 
+const pageSizes = [25, 50, 75, 100];
+
 const CursorPagination = ({
   currentPage,
   pageSize,
@@ -21,6 +23,10 @@ const CursorPagination = ({
   const handlePageSizeChange = (event: any) => {
     setPageSize(event.target.value);
   };
+
+  if (!pageSizes.includes(pageSize)) {
+    setPageSize(25);
+  }
 
   return (
     <Stack
@@ -39,10 +45,11 @@ const CursorPagination = ({
         size="small"
         disabled={loading}
       >
-        <MenuItem value={25}>25</MenuItem>
-        <MenuItem value={50}>50</MenuItem>
-        <MenuItem value={75}>75</MenuItem>
-        <MenuItem value={100}>100</MenuItem>
+        {pageSizes.map((size) => (
+          <MenuItem key={size} value={size}>
+            {size}
+          </MenuItem>
+        ))}
       </Select>
       <Stack direction="row" alignItems="center">
         <PaginationButton
